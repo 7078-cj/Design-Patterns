@@ -22,7 +22,11 @@ class User:
     login: str
     
     
-#facade pattern provides a simplified interface to a complex system. In this example, the ComplexSystemStore is a complex system that handles data storage and retrieval, while the UserRepository is a facade that provides a simpler interface for managing user data without exposing the complexities of the underlying store.
+#facade pattern provides a simplified interface to a complex system. 
+# In this example, the ComplexSystemStore is a complex system 
+# that handles data storage and retrieval, while 
+# the UserRepository is a facade that provides a simpler interface 
+# for managing user data without exposing the complexities of the underlying store.
 class UserRepository:
     def __init__(self):
         self.system_preferences = ComplexSystemStore('user_data.txt')
