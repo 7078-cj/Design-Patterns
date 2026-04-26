@@ -32,6 +32,7 @@ class Add(AlgebraExpression):
     operator = "+"
 
     def interpret(self):
+        print(f"Adding {self.left} to {self.right}")
         return self.left.interpret() + self.right.interpret()
 
 
@@ -39,6 +40,7 @@ class Subtract(AlgebraExpression):
     operator = "-"
 
     def interpret(self):
+        print(f"Subtracting {self.right} from {self.left}")
         return self.left.interpret() - self.right.interpret()
 
 
@@ -46,6 +48,7 @@ class Multiply(AlgebraExpression):
     operator = "*"
 
     def interpret(self):
+        print(f"Multiplying {self.left} with {self.right}")
         return self.left.interpret() * self.right.interpret()
 
 
@@ -53,6 +56,7 @@ class Divide(AlgebraExpression):
     operator = "/"
 
     def interpret(self):
+        print(f"Dividing {self.left} by {self.right}")
         return self.left.interpret() / self.right.interpret()
 
 if __name__ == "__main__":
@@ -87,3 +91,17 @@ if __name__ == "__main__":
     print(expressions)
     result = expressions.pop().interpret()
     print(f"Result: {result}")
+    
+# Added 5 to the expression
+# Current expression: (3 + 5)
+# Subtracted 2 from the expression
+# Current expression: ((3 + 5) - 2)
+# Multiplied 7 to the expression
+# Current expression: (((3 + 5) - 2) * 7)
+# Divided 5 to the expression
+# Current expression: ((((3 + 5) - 2) * 7) / 5)
+# Added 11 to the expression
+# Current expression: (((((3 + 5) - 2) * 7) / 5) + 11)
+# tokens = ['3', '+', '5', '-', '2', '*', '7', '/', '5', '+', '11']
+# [<__main__.Add object at 0x000001E1339F9BD0>]
+# Result: 19.4
